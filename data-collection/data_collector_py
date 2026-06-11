@@ -1,0 +1,57 @@
+import cv2
+import os
+
+CLASSES = ["phone", "book", "calculator", "headphones", "clock"]
+for cls in CLASSES:
+    os.makedirs(f"dataset/{cls}", exist_ok=True)
+print("\nChoose a class:")
+for i, cls in enumerate(CLASSES, 1):
+    print(f"{i}. {cls}")
+choice = int(input("\nEnter choice: ")) - 1
+class_name = CLASSES[choice]
+count = len(os.listdir(f"dataset/{class_name}"))
+
+cap = cv2.VideoCapture(0)
+
+cv2.namedWindow("Data Collector", cv2.WINDOW_NORMAL)
+
+print("\nClick the camera window first")
+print("s = Save image")
+print("q / ESC = Quit\n")
+
+def preprocess(img, size=224):
+    h, w = img.shape[:2]
+    min_dim = min(h, w)
+    start_x = (w - min_dim) // 2 #center crop
+    start_y = (h - min_dim) // 2 
+    cropped = img[start_y:start_y+min_dim, start_x:start_x+min_dim]
+    return cv2.resize(cropped, (size, size))
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        break
+    display = frame.copy()
+
+    cv2.putText(
+        display,
+        f"{class_name} | {count}",
+        (10, 30),
+        cv2.FONT_HERSHEY_SIMPLEX,
+        1,
+        (0, 255, 0),
+        2
+    )
+
+    cv2.imshow("Data Collector", display)
+    key = cv2.waitKey(10) & 0xFF
+    if key == ord('s'):
+        img = preprocess(frame, 224)
+        filename = f"dataset/{class_name}/{class_name}_{count:03d}.jpg"
+        cv2.imwrite(filename, img)
+        count += 1
+        print("Saved:", filename)
+    elif key == ord('q') or key == 27:
+        break
+
+cap.release()
+cv2.destroyAllWindows()
