@@ -39,6 +39,7 @@ A custom convolutional neural network to classify 5 objects(book, phone,calculat
 - Step Decay: 47.37%
 - ReduceLROnPlateau: 57.89%
 - Cosine Decay: 73.68%
+
 **What changed and why?**
 - All scheduling underperformed on this dataset. Scheduling is designed for long training (100 or more epochs). On 50 epoch with 125 images fixed LR works well.
 ( Need for lomger training, early drops, extra parameters that drop differently are some of the reasons this happens on small datasets)
