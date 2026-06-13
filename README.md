@@ -1,6 +1,6 @@
 ### CNN FOR OBJECT CLASSIFICATION
 ## WHAT I BUILT:
-A vustom convolutional neural network to classify 5 objects(book, phone,calculator,clock and headphones) from a dataset of 125 custom images. 
+A custom convolutional neural network to classify 5 objects(book, phone,calculator,clock and headphones) from a dataset of 125 custom images. 
 # Baseline Model
 - Model Architecture - Custom CNN with:
   - 4 conv layers with ReLU activation
