@@ -17,7 +17,7 @@ A custom convolutional neural network to classify 5 objects(book, phone,calculat
 
 ## Experiments Performed
 
-# Optimizers Tested:
+# Optimizers:
 - SGD Test Accuracy: 15.79%
 - RMSprop Test Accuracy: 73.68%
 - Adam Test Accuracy: 73.68% (78.95% in baseline model but because of random initialization the model trained with different initial weights so there is a little variance)
