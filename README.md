@@ -70,7 +70,7 @@ A custom convolutional neural network to classify 5 objects(book, phone,calculat
 
 **What changed and why?**
 - L2 add penalty : loss=loss+L2_weight*sum(weight)^2
-- L2 forces weights toward zero during training and it prevents weights from getting large,
+- L2 forces weights toward zero during training and it prevents weights from getting large
 - L2 adds constraints on model capacity and train test gap in baseline was only 3.8% and L2 tackles overfitting.
 
 ## Key Insights:
