@@ -76,6 +76,7 @@ A custom convolutional neural network to classify 5 objects(book, phone,calculat
 - L2 adds constraints on model capacity and train test gap in baseline was only 3.8% and L2 tackles overfitting.
 
 ## Key Insights:
+
 - I learnt that optimizer choice is really important and adaptive optimizers for small datasets are good.
 - I also learnt that learning rates are optimal and that batch sizes are important because on small datasets batch size noise acts like regularization
 - I found out that scheduling works on large datasets only
