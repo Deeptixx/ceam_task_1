@@ -14,7 +14,9 @@ A custom convolutional neural network to classify 5 objects(book, phone,calculat
 # Baseline Results:
 - Train, Val, Test Accuracy were 82.76% , 78.95% , 78.95% respectively. 
 - Overfitting gap was 3.8% which shows mild overfitting (small dataset)
+
 ## Experiments Performed
+
 # Optimizers Tested:
 - SGD Test Accuracy: 15.79%
 - RMSprop Test Accuracy: 73.68%
