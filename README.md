@@ -95,12 +95,12 @@ A custom convolutional neural network to classify 5 objects(book, phone,calculat
   - scheduling works for longer training
 
 
-## Things confused me and insights i discovered:
+## Things confused me and insights I discovered:
 
 - Why a dropout of 0.7 beat 0.5
-  - i realised my model maybe overparameterized and a heavy dropout like 0.7 helps the model to learn more features instead of memorizing them so on tiny datasets maybe heavy dropout can help
+  - I realised my model maybe overparameterized and a heavy dropout like 0.7 helps the model to learn more features instead of memorizing them so on tiny datasets maybe heavy dropout can help
 - why scheduling didnt help
-  - I assumed the scheduling would increase my test accuracy but that was notthe case scheduling is more suited for long training.
+  - I assumed learning rate scheduling would increase my test accuracy but that was not the case scheduling is more suited for longer training.
 - Why my SGD failed
  - test accuracy of 15.79% with 5 classes and 125 images is almost random guessing so on small and noisy datasets adaptive optimizers work better 
 - Gradient noise from small batch act as regularization on small datasets preventing memorization.
