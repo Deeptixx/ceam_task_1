@@ -1,7 +1,7 @@
 ### CNN FOR OBJECT CLASSIFICATION
 
 ## WHAT I BUILT:
-A custom convolutional neural network to classify 5 objects(book, phone,calculator,clock and headphones) from a dataset of 125 custom images. 
+A custom convolutional neural network to classify 5 objects (book, phone,calculator,clock and headphones) from a dataset of 125 custom images. 
 # Baseline Model
 
 - Model Architecture - Custom CNN with:
@@ -27,7 +27,7 @@ A custom convolutional neural network to classify 5 objects(book, phone,calculat
 - AdaGrad Test Accuracy: 15.79%
 
 **What changed and why?**
-- Adaptive Optimizers adjust learnig rates for each parameter that is they are momentum based so Adam and RMSprop perform relatively well compared to non adaptive ones that update weights step wise.
+- Adaptive Optimizers adjust learnig rates for each parameter that is they use momentum based updates so Adam and RMSprop perform relatively well compared to non adaptive ones that update weights step wise.
  
 # Learning Rate:
 - Adam (lr=0.0001): Test Accuracy = 52.63%
@@ -40,13 +40,13 @@ A custom convolutional neural network to classify 5 objects(book, phone,calculat
 - Best learning rate was 0.001 ( higher than baseline beacuse of luck but still performed better than the others)
 - Plot was an inverted U curve which means that if the learning rate was too low then the model learned slowly and if it was too high there was instability
 
-# Learn rate scheduling:
+# Learning rate scheduling:
 - Step Decay: 47.37%
 - ReduceLROnPlateau: 57.89%
 - Cosine Decay: 73.68%
 
 **What changed and why?**
-- All scheduling underperformed on this dataset. Scheduling is designed for long training (100 or more epochs). On 50 epoch with 125 images fixed LR works well.
+- All scheduling underperformed on this dataset. Scheduling is designed for long training (100 or more epochs). On 50 epochs with 125 images fixed LR works well.
 ( Need for longer training, early drops or extra parameters that drop differently are some of the reasons this happens on small datasets)
 
 # Batch Size:
