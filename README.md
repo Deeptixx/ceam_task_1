@@ -1,7 +1,9 @@
 ### CNN FOR OBJECT CLASSIFICATION
+
 ## WHAT I BUILT:
 A custom convolutional neural network to classify 5 objects(book, phone,calculator,clock and headphones) from a dataset of 125 custom images. 
 # Baseline Model
+
 - Model Architecture - Custom CNN with:
   - 4 conv layers with ReLU activation
   - 3 MaxPooling2D layers
@@ -12,6 +14,7 @@ A custom convolutional neural network to classify 5 objects(book, phone,calculat
 - Batch Size: 8
 - Epochs: 50
 # Baseline Results:
+
 - Train, Val, Test Accuracy were 82.76% , 78.95% , 78.95% respectively. 
 - Overfitting gap was 3.8% which shows mild overfitting (small dataset)
 
@@ -77,10 +80,30 @@ A custom convolutional neural network to classify 5 objects(book, phone,calculat
 
 ## Key Insights:
 
-- I learnt that optimizer choice is really important and adaptive optimizers for small datasets are good.
-- I also learnt that learning rates are optimal and that batch sizes are important because on small datasets batch size noise acts like regularization
-- I found out that scheduling works on large datasets only
-- L2 tackles overfitting
+- optimizer choice is really important and adaptive optimizers for small datasets are good.
+- learning rates are optimal and that batch sizes are important because on small datasets batch size noise acts like regularization
+- scheduling works on large datasets only
+- L2 doesnt help datasets when limitation is data scarcity not overfitting
+
+## Failed Experiments
+
+- SGD and AdaGrad (15.79% failed accuracy):
+  - fixed learning rate optimizers struggle on small datasets maybe the learning rate was too low or momentum was required or learning rate schedulers.
+- L2 regularization:
+  - limits model capacity so it may not be needed always
+- Learning rate scheduling:
+  - scheduling works for longer training
+
+
+## Things confused me and insights i discovered:
+
+- Why a dropout of 0.7 beat 0.5
+  - i realised my model maybe overparameterized and a heavy dropout like 0.7 helps the model to learn more features instead of memorizing them so on tiny datasets maybe heavy dropout can help
+- why scheduling didnt help
+  - I assumed the scheduling would increase my test accuracy but that was notthe case scheduling is more suited for long training.
+- Why my SGD failed
+ - test accuracy of 15.79% with 5 classes and 125 images is almost random guessing so on small and noisy datasets adaptive optimizers work better 
+- Gradient noise from small batch act as regularization on small datasets preventing memorization.
 
 
 
