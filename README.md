@@ -27,7 +27,7 @@ A custom convolutional neural network to classify 5 objects (book, phone,calcula
 - AdaGrad Test Accuracy: 15.79%
 
 **What changed and why?**
-- Adaptive Optimizers adjust learnig rates for each parameter that is they use momentum based updates so Adam and RMSprop perform relatively well compared to non adaptive ones that update weights step wise.
+- Adaptive Optimizers adjust learning rates for each parameter that is they use momentum based updates so Adam and RMSprop perform relatively well compared to non adaptive ones that update weights step wise.
  
 # Learning Rate:
 - Adam (lr=0.0001): Test Accuracy = 52.63%
@@ -102,7 +102,7 @@ A custom convolutional neural network to classify 5 objects (book, phone,calcula
 - why scheduling didnt help
   - I assumed learning rate scheduling would increase my test accuracy but that was not the case scheduling is more suited for longer training.
 - Why my SGD failed
- - test accuracy of 15.79% with 5 classes and 125 images is almost random guessing so on small and noisy datasets adaptive optimizers work better 
+  - test accuracy of 15.79% with 5 classes and 125 images is almost random guessing so on small and noisy datasets adaptive optimizers work better 
 - Gradient noise from small batch act as regularization on small datasets preventing memorization.
 
 
